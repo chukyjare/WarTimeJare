@@ -6,10 +6,12 @@ import javax.swing.JPanel;
 import model.Battalion;
 import view.SpecialityGenerator;
 import view.info.MarketSoldierInfo;
+import view.info.SpecificationSoldiersInfo;
 
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javax.swing.JLabel;
 
@@ -106,5 +108,12 @@ public class MarketSoldiersAssay extends JPanel {
 	
 	public JLabel getLblMaxSoldiers() {
 		return lblMaxSoldiers;
+	}
+	public LinkedList<SpecificationSoldiersInfo> getListArmy() {
+		LinkedList<SpecificationSoldiersInfo> response=new LinkedList<SpecificationSoldiersInfo>();
+		for (SoldiersSpecialityAssay specialities : specialitys) {
+			response.add(new SpecificationSoldiersInfo(String.valueOf(specialities.getLblSpeciality()), Integer.valueOf(specialities.Quantity())));
+		}
+		return response;
 	}
 }

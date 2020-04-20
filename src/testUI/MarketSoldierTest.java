@@ -19,6 +19,8 @@ public class MarketSoldierTest extends JFrame {
 	private JPanel contentPane = new JPanel();
 	private MarketSoldierMenu marketMenu;
 
+	
+
 	/**
 	 * Launch the application.
 	 */

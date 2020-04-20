@@ -55,7 +55,13 @@ public class SoldiersSpecialityAssay extends JPanel {
 		return txtQuantity;
 	}
 	
+	public String Quantity() {
+		return txtQuantity.getText().toString();
+	}
+	
 	public JLabel getLblSpeciality() {
 		return lblSpeciality;
 	}
+	
+
 }
