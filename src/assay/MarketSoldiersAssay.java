@@ -109,7 +109,7 @@ public class MarketSoldiersAssay extends JPanel {
 	public JLabel getLblMaxSoldiers() {
 		return lblMaxSoldiers;
 	}
-	public LinkedList<SpecificationSoldiersInfo> getListArmy() {
+	public LinkedList<SpecificationSoldiersInfo> getListBattalions() {
 		LinkedList<SpecificationSoldiersInfo> response=new LinkedList<SpecificationSoldiersInfo>();
 		for (SoldiersSpecialityAssay specialities : specialitys) {
 			response.add(new SpecificationSoldiersInfo(String.valueOf(specialities.getLblSpeciality()), Integer.valueOf(specialities.Quantity())));

@@ -35,7 +35,7 @@ public class MarketSoldierMenu extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if (isCorrectMaxSoldier()) {
-							marketFrame.getListArmy();
+							marketFrame.getListBattalions();
 							dispose();
 						}
 					}
