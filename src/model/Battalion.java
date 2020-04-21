@@ -25,6 +25,18 @@ public class Battalion {
 	public Type getType() {
 		return type;
 	}
+
+	public int getSoldiersQuantity() {
+		return soldiers.size();
+	}
+
+
+	public boolean insertSoldier(Soldier soldier) {
+		if (soldier.getSpeciality().getType().equals(type)) {	
+			return soldiers.add(soldier);
+		}
+		return false;
+	}
 	
 	
 	

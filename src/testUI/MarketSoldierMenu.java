@@ -10,14 +10,20 @@ import javax.swing.border.EmptyBorder;
 
 import assay.MarketSoldiersAssay;
 import view.info.MarketSoldierInfo;
+import view.info.SpecificationSoldiersInfo;
+
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.awt.event.ActionEvent;
 
 public class MarketSoldierMenu extends JDialog {
 
 	private JPanel contentPanel = new JPanel();
 	private MarketSoldiersAssay marketFrame;
+	private JButton okButton;
 	
+
 	public MarketSoldierMenu(MarketSoldierInfo info) {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -31,19 +37,16 @@ public class MarketSoldierMenu extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
+				okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						if (isCorrectMaxSoldier()) {
-							marketFrame.getListBattalions();
 							dispose();
-						}
 					}
 
 				});
-				okButton.setActionCommand("OK");
+//				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+//				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
@@ -58,8 +61,16 @@ public class MarketSoldierMenu extends JDialog {
 		}
 	}
 
-	private boolean isCorrectMaxSoldier() {
+	public JButton getOkButton() {
+		return okButton;
+	}
+
+	public boolean isCorrectMaxSoldier() {
+		return marketFrame.isCorrectMaxSoldier();
+	}
+
+	public LinkedList<SpecificationSoldiersInfo> getListArmy() {
 		// TODO Auto-generated method stub
-		return false;
+		return marketFrame.getListBattalions();
 	}
 }

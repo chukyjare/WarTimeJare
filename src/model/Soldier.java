@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Soldier {
+public class Soldier {
 	private String name;
 	private int stamina=100, exp=1, atack=1, defense=1;
 	private Speciality speciality;

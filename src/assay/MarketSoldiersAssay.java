@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 
 import model.Battalion;
-import view.SpecialityGenerator;
+import view.Generator;
 import view.info.MarketSoldierInfo;
 import view.info.SpecificationSoldiersInfo;
 
@@ -33,12 +33,15 @@ public class MarketSoldiersAssay extends JPanel {
 
 
 	
+	public String getTotalNumber() {
+		return lblTotalNumber.getText();
+	}
 	/**
 	 * Create the panel.
 	 */
 	public MarketSoldiersAssay(MarketSoldierInfo info) {
 		setLayout(null);
-		specialitys=SpecialityGenerator.getSpeciality(info.getType(), myFocus);
+		specialitys=Generator.getSpeciality(info.getType(), myFocus);
 		//Especialidades y numero de especialidades
 //		for (int i = 0; i < specialityNumber; i++) {
 //			specialitys.add(new SoldiersSpecialityAssay());
@@ -94,6 +97,11 @@ public class MarketSoldiersAssay extends JPanel {
 		}
 		return value;
 	}
+	
+	public boolean isCorrectMaxSoldier() {
+		return sumOfSpecialitiesTroops(value)==Integer.parseInt(lblMaxSoldiers.getText());
+	}
+	
 	public byte getSpecialityNumber() {
 		return specialityNumber;
 	}

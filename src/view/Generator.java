@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import assay.SoldiersSpecialityAssay;
+import model.Battalion;
 import model.Speciality;
 import model.Type;
+import view.info.MarketSoldierInfo;
 
-public class SpecialityGenerator {
+public class Generator {
 
 	
 
@@ -21,5 +23,7 @@ public class SpecialityGenerator {
 		}
 		return panel;
 	}
-	
+	public static MarketSoldierInfo getMarketSoldierInfo(Battalion battalion) {
+		return new MarketSoldierInfo(battalion);
+	}
 }
