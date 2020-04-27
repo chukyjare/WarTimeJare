@@ -3,14 +3,26 @@ package model;
 import java.util.HashMap;
 
 public class Board {
-	private int width, height;
+	private Dimensionn dimension;
 	private Matrix<Coordinate, Square> squares;
-	
-	public Board(int width, int height) {
+
+	public Board(Dimensionn dimension) {
 		super();
-		this.width = width;
-		this.height = height;
-		squares = new Matrix<Coordinate, Square>(width, height);
+		this.dimension = dimension;
+
+		squares = new Matrix<Coordinate, Square>(dimension.getWidth(), dimension.getHeight());
 	}
-	
+
+	public Square getFile(Coordinate coordinate) {
+		return squares.getElement(coordinate);
+	}
+
+	public void insert(model.Square square, Coordinate coordinate) {
+		squares.setElement(coordinate, square);
+	}
+
+	public void insert(Battalion battalion, Coordinate coordinate) {
+		squares.setElement(coordinate, battalion);
+		
+	}
 }
